@@ -3,11 +3,9 @@
 import { myFunction } from './lib/index.js';
 myFunction();
 
-
 import home from './templates/home.js';
 import login from './templates/login.js';
 import error from './templates/error.js';
-
 
 const routes = [
    { path: '/', component: home },

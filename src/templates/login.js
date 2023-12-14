@@ -1,54 +1,5 @@
-// import{login} from "../lib/services";
-// import patita from "./imagenes/patita.png"
 
-// function loginvista(navigateTo) {
-//     const section = document.createElement("section");
-//     const title = document.createElement("h2");
-//     const buttonreturn = document.createElement("button");
-//     const logopet = document.createElement("img");
-//     const form = document.createElement("div");
-//     const inputemail = document.createElement("input");
-//     const inputpass = document.createElement("input");
-//     const buttonlogin = document.createElement("button");
-     
-//     logopet.src = patita
-//     logopet.setAttribute('class','llogopet')
-
-//     form.setAttribute('class','divform')
-//     inputemail.placeholder = 'Write email';
-//     inputemail.setAttribute('class', 'inputlog')
-//     inputpass.placeholder = 'pass';
-//     inputpass.setAttribute('class', 'inputlog')
-//     title.textContent = 'login';
-//     title.setAttribute('class', 'logintitle')
-//     buttonlogin.textContent = 'go';
-//     buttonlogin.setAttribute('id', 'botongo')
-
-//     buttonreturn.textContent = 'Retorna a Home';
-//     buttonreturn.setAttribute('id', 'botonreturn')
-
-//     buttonreturn.addEventListener('click', ()=>{
-//         navigateTo('/home')
-//     })
-//     buttonlogin.addEventListener('click', ()=>{
-//         const result = login(inputemail.value. inputpass.value)
-//         if(result){
-//             navigateTo('/muro')
-//         }else{
-//             alert('Usuario no renoconocido')
-//         }
-//     })
-//     form.append(title,inputemail, inputpass, buttonlogin, buttonreturn);
-//     section.append(logopet, form);
-
-//     return section;
-// }
-
-// export default login;
-
-// file login.js
-
- import patita from "./imagenes/patita.png"
+import patita from "./imagenes/patita.png"
 
 
 function login(navigateTo) {
@@ -60,23 +11,37 @@ function login(navigateTo) {
     const inputEmail = document.createElement('input');
     const inputPass = document.createElement('input');
     const buttonLogin = document.createElement('button');
+    const registerLink = document.createElement('a');
+
 
    imgpatita.src = patita
    imgpatita.setAttribute('class','patita')
+   imgpatita.classList.add("imagen")
+
   
     inputEmail.placeholder = 'Escribe tu Email';
     inputPass.placeholder = 'Contraseña';
   
     title.textContent = 'Login';
     buttonLogin.textContent = 'Iniciar Sesion';
-  
+    buttonLogin.classList.add("boton")
+
+
     buttonReturn.textContent = 'Return to home';
+    buttonReturn.classList.add("boton")
+
     buttonReturn.addEventListener('click', () => {
-      navigateTo('/');
+       navigateTo('/');
+    });
+
+    registerLink.textContent = '¿No tienes una cuenta? Regístrate aquí';
+    registerLink.href = '#'; // Cambia '#' por la ruta real de tu página de registro
+    registerLink.addEventListener('click', () => {
+        navigateTo('/registro');
     });
   
     form.append(inputEmail, inputPass, buttonLogin);
-    section.append(title, form, buttonReturn);
+    section.append(imgpatita, title, form, registerLink, buttonReturn);
   
     return section;
   }
