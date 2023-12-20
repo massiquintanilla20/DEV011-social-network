@@ -30,15 +30,18 @@ function login(navigateTo) {
     buttonReturn.textContent = 'Return to home';
     buttonReturn.classList.add("boton")
 
+
     buttonReturn.addEventListener('click', () => {
        navigateTo('/');
     });
 
     registerLink.textContent = '¿No tienes una cuenta? Regístrate aquí';
-    registerLink.href = '#'; // Cambia '#' por la ruta real de tu página de registro
-    registerLink.addEventListener('click', () => {
-        navigateTo('/registro');
-    });
+    registerLink.href = '/register';  // URL de destino
+
+    // registerLink.href = '/src/templates/register.js'; // Cambia '#' por la ruta real de tu página de registro
+    // registerLink.addEventListener('click', () => {
+    //     navigateTo('/registrar');
+    // });
   
     form.append(inputEmail, inputPass, buttonLogin);
     section.append(imgpatita, title, form, registerLink, buttonReturn);

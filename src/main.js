@@ -6,12 +6,17 @@ myFunction();
 import home from './templates/home.js';
 import login from './templates/login.js';
 import error from './templates/error.js';
+import register_template from './templates/register.js';
+// import about from "./templates/about.js"
 
 const routes = [
    { path: '/', component: home },
    { path: '/login', component: login },
    { path: '/error', component: error },
+   {path: '/register', component: register_template},
+  //  {path: "/about", component: about}
  ];
+
  
  const defaultRoute = '/';
  const root = document.getElementById('root');
