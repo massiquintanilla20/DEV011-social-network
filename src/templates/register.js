@@ -1,4 +1,5 @@
 import patita from "./imagenes/patita.png";
+import { register_user } from "../firebase/auth.js";
 
 function register(navigateTo) {
   const section = document.createElement('section');
@@ -30,17 +31,41 @@ function register(navigateTo) {
     // Lógica para manejar el registro del usuario
     const email = inputEmail.value;
     const password = inputPass.value;
-    const confirmPassword = inputConfirmPass.value;
+    // const confirmPassword = inputConfirmPass.value;
+    register_user(email, password) 
 
     // Realiza validaciones y envía los datos al servidor para el registro
-    if (password === confirmPassword) {
-      // Aquí debes implementar la lógica para enviar los datos al servidor
-      // Por ejemplo, puedes usar fetch() o alguna librería para manejar las solicitudes HTTP
-      // y enviar los datos al servidor para el registro del usuario.
-    } else {
-      // Muestra un mensaje de error si las contraseñas no coinciden
-      alert('Las contraseñas no coinciden. Intenta de nuevo.');
-    }
+    // if (password === confirmPassword) {
+    //   // Aquí debes implementar la lógica para enviar los datos al servidor
+    //   // Por ejemplo, puedes usar fetch() o alguna librería para manejar las solicitudes HTTP
+    //   // y enviar los datos al servidor para el registro del usuario.
+    //   const userData = {
+    //     email: email,
+    //     password: password,
+    //     usuario: nombre,
+    //   };
+
+    //   fetch('http://localhost:5173/register', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(userData),
+    //   })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       // Maneja la respuesta del servidor (puede ser un mensaje de éxito o error)
+    //       console.log('Respuesta del servidor:', data);
+    //     })
+    //     .catch(error => {
+    //       console.error('Error al enviar datos al servidor:', error);
+    //     });
+     
+
+    // } else {
+    //   // Muestra un mensaje de error si las contraseñas no coinciden
+    //   alert('Las contraseñas no coinciden. Intenta de nuevo.');
+    // }
   });
 
   loginLink.textContent = '¿Ya tienes una cuenta? Inicia sesión aquí';
