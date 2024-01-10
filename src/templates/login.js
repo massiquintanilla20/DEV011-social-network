@@ -12,7 +12,12 @@ function login(navigateTo) {
     const inputEmail = document.createElement('input');
     const inputPass = document.createElement('input');
     const buttonLogin = document.createElement('button');
-    const registerLink = document.createElement('a');
+    const buttonRegister = document.createElement('button');
+
+      // Agregando estilo para section
+  section.classList.add("section_class");
+
+  form.classList.add("form_class");
 
   // Configurar la imagen patita
    imgpatita.src = patita
@@ -46,7 +51,7 @@ function login(navigateTo) {
       });
 
     });
-   // Configurar el botón de inicio de sesión
+   // Configurar el botón de Home
     buttonReturn.textContent = 'Return to home';
     buttonReturn.classList.add("boton")
     buttonReturn.addEventListener('click', () => {
@@ -54,17 +59,16 @@ function login(navigateTo) {
     });
 
    // Configurar el enlace de registro
-    registerLink.textContent = '¿No tienes una cuenta? Regístrate aquí';
-    registerLink.href = '/register';  // URL de destino
+    buttonRegister.textContent = 'Regístrate aquí';
+    buttonRegister.classList.add("boton")
+    buttonRegister.addEventListener('click', () => {
+      navigateTo('/register');
+   });
 
-    // registerLink.href = '/src/templates/register.js'; // Cambia '#' por la ruta real de tu página de registro
-    // registerLink.addEventListener('click', () => {
-    //     navigateTo('/registrar');
-    // });
   
    // Agregar elementos al formulario y a la sección
     form.append(inputEmail, inputPass, buttonLogin);
-    section.append(imgpatita, title, form, registerLink, buttonReturn);
+    section.append(imgpatita, title, form, buttonRegister, buttonReturn);
   
    // Devolver el contenedor <section>
     return section;

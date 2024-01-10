@@ -7,6 +7,13 @@ function home(navigateTo) {
     const imgpatita = document.createElement('img')
     const title = document.createElement('h2');
     const button = document.createElement('button');
+    const form = document.createElement('form');
+
+
+      // Agregando estilo para section
+  section.classList.add("section_class");
+
+  form.classList.add("form_class");
 
     // Configurar la imagen patita
     imgpatita.src = patita
