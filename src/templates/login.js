@@ -43,7 +43,6 @@ function login(navigateTo) {
         // correcto logeo
         console.log("Sign-in successful", user);
         navigateTo("/muro")
-
       })
       .catch((error) => {
         // error en logeo
@@ -51,6 +50,7 @@ function login(navigateTo) {
       });
 
     });
+    
    // Configurar el botón de Home
     buttonReturn.textContent = 'Return to home';
     buttonReturn.classList.add("boton")

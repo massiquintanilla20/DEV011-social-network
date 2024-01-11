@@ -8,7 +8,7 @@ import { app } from "./config.js";
 const auth = getAuth(app);
 
 export function register_user(email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
+  return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
