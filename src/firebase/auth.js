@@ -22,15 +22,15 @@ export function register_user(email, password) {
 }
 
 export function iniciar_sesion(email, password) {
-  console.log("%cauth.js line:22 email", "color: #007acc;", email);
-  console.log("%cauth.js line:23 object", "color: #007acc;", password);
+  // console.log("%cauth.js line:22 email", "color: #007acc;", email);
+  // console.log("%cauth.js line:23 object", "color: #007acc;", password);
   return signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
       return user
     })
     .catch((error) => {
-      console.log("%cauth.js line:30 error", "color: #007acc;", error);
+      // console.log("%cauth.js line:30 error", "color: #007acc;", error);
       const errorCode = error.code;
       const errorMessage = error.message;
       throw error

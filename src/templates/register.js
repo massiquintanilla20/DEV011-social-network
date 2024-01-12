@@ -1,7 +1,6 @@
 // Importar la imagen de la patita y funciones de autenticación desde otros archivos
 import patita from "./imagenes/patita.png";
 import { register_user } from "../firebase/auth.js";
-import { iniciar_sesion } from "./../firebase/auth";
 
 // Definir la función register que crea y configura elementos HTML
 function register(navigateTo) {
@@ -31,7 +30,7 @@ function register(navigateTo) {
   title.textContent = 'Registro';
   buttonRegister.textContent = 'Registrarse';
   buttonRegister.classList.add("boton");
-  buttonLogin.textContent = 'Iniciar Sesion';
+  buttonLogin.textContent = 'Inicia Sesion Aqui';
   buttonLogin.classList.add("boton");
   buttonReturn.textContent = 'Return to home';
   buttonReturn.classList.add("boton");
@@ -49,21 +48,12 @@ function register(navigateTo) {
       });
   });
 
-  // Configurar el evento de clic para el botón de inicio de sesión
-  buttonLogin.addEventListener('click', (event) => {
-    event.preventDefault();
-    const email = inputEmail.value;
-    const password = inputPass.value;
-    iniciar_sesion(email, password)
-      .then((user) => {
-        console.log("Inicio de sesión exitoso", user);
-        navigateTo("/muro");
-      })
-      .catch((error) => {
-        console.error("Error en el inicio de sesión", error);
-      });
-  });
-
+   // Configurar el botón de Home
+   buttonLogin.textContent = 'Inicia Sesion Aqui';
+   buttonLogin.classList.add("boton")
+   buttonLogin.addEventListener('click', () => {
+      navigateTo('/login');
+   });
   // Configurar el evento de clic para el botón de regreso a la página de inicio
   buttonReturn.addEventListener('click', () => {
     navigateTo('/');

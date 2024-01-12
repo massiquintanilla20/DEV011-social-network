@@ -32,12 +32,25 @@ function login(navigateTo) {
     title.textContent = 'Login';
     buttonLogin.textContent = 'Iniciar Sesion';
     buttonLogin.classList.add("boton")
-    buttonLogin.addEventListener('click', (event) => {
-      event.preventDefault();
+    buttonLogin.addEventListener('click', () => {
+      navigateTo('/muro');
+      
+      let isButtonClick = false;
+
       // Lógica para manejar el registro del usuario
       const email = inputEmail.value;
       const password = inputPass.value;
-      // const confirmPassword = inputConfirmPass.value;
+
+     // Cambiar el color del botón al hacer clic
+   // Cambiar el color del botón al hacer clic
+   if (!isButtonClick) {
+    buttonLogin.style.backgroundColor = '#e74c3c'; // Nuevo color
+    isButtonClick = true;
+  } else {
+    buttonLogin.style.backgroundColor = ''; // Restaurar color original (dejar en blanco para usar el estilo CSS)
+    isButtonClick = false;
+  }
+        // const confirmPassword = inputConfirmPass.value;
       iniciar_sesion(email, password)
       .then((user) => {
         // correcto logeo
