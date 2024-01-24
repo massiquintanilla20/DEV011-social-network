@@ -3,17 +3,23 @@
     text-align: center;
     border: 3px solid #4d5d8d;
     display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
-    margin-bottom: 15px; /* Ajusta el valor según la separación que desees */
+    flex-direction: column;
+    /* Asegura que los elementos se apilen verticalmente */
+    align-items: center;
+    /* Alinea verticalmente los elementos al centro */
+    margin-bottom: 15px;
+    /* Ajusta el valor según la separación que desees */
     padding: 15px;
 
 }
 
 .patita {
-    width: 350px; /* Ancho deseado */
-    height: 250px; /* Altura deseada */
-    margin: 1px auto; /* Solo necesitas definir margin una vez, y centrar horizontalmente */
+    width: 350px;
+    /* Ancho deseado */
+    height: 250px;
+    /* Altura deseada */
+    margin: 1px auto;
+    /* Solo necesitas definir margin una vez, y centrar horizontalmente */
 }
 
 .prueba {
@@ -25,23 +31,35 @@
 }
 
 .imagen1 {
-    width: 350px; /* Ancho deseado */
-    height: 250px; /* Altura deseada */  
+    width: 350px;
+    /* Ancho deseado */
+    height: 250px;
+    /* Altura deseada */
 }
 
 .boton {
-    width: 125px; /* Ancho del botón */
-    height: 40px; /* Altura del botón */
-    margin: 0 auto; /* Margen superior e inferior: 20px, margen izquierdo y derecho: auto (centra horizontalmente) */
-    text-align: center; /* Centra el contenido dentro del botón */
-    background-color: #4d5d8d; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Elimina el borde del botón */
-    border-radius: 5px; /* Agrega esquinas redondeadas al botón */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 125px;
+    /* Ancho del botón */
+    height: 40px;
+    /* Altura del botón */
+    margin: 0 auto;
+    /* Margen superior e inferior: 20px, margen izquierdo y derecho: auto (centra horizontalmente) */
+    text-align: center;
+    /* Centra el contenido dentro del botón */
+    background-color: #4d5d8d;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Elimina el borde del botón */
+    border-radius: 5px;
+    /* Agrega esquinas redondeadas al botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 body {
     display: flex;
     align-items: center;
@@ -54,14 +72,24 @@ body {
 
 .form_class {
     display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
+    flex-direction: column;
+    /* Asegura que los elementos se apilen verticalmente */
+    align-items: center;
+    /* Alinea verticalmente los elementos al centro */
 }
 
 /* para editar lo cuadritos de placeholder de correo y password */
 input {
- height: 20px;
- margin-top: 3px;
- margin-bottom: 3px;
+    height: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
+.posts_contenedor {
+    background-color: #4d5d8d;
+}
+
+.posts_contenedor li {
+    margin: 5px;
+    background-color: aqua;
+}

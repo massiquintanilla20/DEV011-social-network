@@ -1,34 +1,47 @@
-import patita from "./imagenes/patita.png"
-import { savePost } from "../firebase/store";
+import patita from "./imagenes/patita.png";
+import { savePost , getPosts } from "../firebase/store";
+//import { QuerySnapshot } from "firebase/firestore";
 
+function  muro() {
+  // Crear elementos
+  const section = document.createElement("section");
+  const imgpatita = document.createElement("img");
+  const formPost = document.createElement("form");
+  const post = document.createElement("textarea");
+  const btnSubmit = document.createElement("button");
+  const postSection = document.createElement("div");
+  const ul=document.createElement('ul');
+  ul.classList.add("posts_contenedor")
 
-function muro(navigateTo) {
-    const section = document.createElement('section');
+  // Configurar la imagen patita
+  imgpatita.src = patita;
+  imgpatita.setAttribute("class", "patita");
+  imgpatita.classList.add("imagen1");
 
-    const imgpatita = document.createElement('img')
-    console.log("este es el muro")
+  // Configurar el formulario
+  btnSubmit.textContent = "Publicar post";
+  btnSubmit.addEventListener("click", function (e) {
+    alert("Tu post ha sido publicado");
+    e.preventDefault();
+    // Guardar el valor del post
+    const postValue = post.value;
+    savePost(postValue);
+  });
 
-    // Configurar la imagen patita
-    imgpatita.src = patita
-    imgpatita.setAttribute('class', 'patita')
-    imgpatita.classList.add("imagen1")
-
-    const formPost = document.createElement("form")
-    const post = document.createElement("textarea")
-    const btnSubmit = document.createElement('button');
-    btnSubmit.addEventListener("click", function (e) {
-        e.preventDefault();
-        //guardar el valor
-        const postValue = post.value
-        savePost(postValue)
-    })
-
-    // Agregar elementos al contenedor section
-    formPost.append(post, btnSubmit)
-    section.append(imgpatita, formPost);
-
-    // Devolver el contenedor section
-    return section;
+  // Agregar elementos al formulario y al contenedor section
+  formPost.append(post, btnSubmit);
+  section.append(imgpatita, formPost,ul);
+  getPosts().then((docs)=>{
+   docs.forEach((doc) => {
+    console.log(doc.id)
+    const docData = doc.data()
+        const li=document.createElement('li');
+    li.textContent = docData.description;
+     ul.appendChild(li);
+  });
+  })
+  // Devolver el contenedor section
+  return section;
 }
-export default muro;
 
+export default muro;

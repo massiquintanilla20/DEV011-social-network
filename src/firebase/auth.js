@@ -27,12 +27,12 @@ export function iniciar_sesion(email, password) {
   return signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      return user
+      return user;
     })
     .catch((error) => {
       // console.log("%cauth.js line:30 error", "color: #007acc;", error);
       const errorCode = error.code;
       const errorMessage = error.message;
-      throw error
+      throw error;
     });
 }
