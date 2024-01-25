@@ -2,6 +2,7 @@ import patita from "./imagenes/patita.png";
 import { savePost , getPosts } from "../firebase/store";
 //import { QuerySnapshot } from "firebase/firestore";
 
+// Declaración de la función muro. Esta función crea elementos HTML dinámicamente para formar una sección de la interfaz de usuario.
 function  muro() {
   // Crear elementos
   const section = document.createElement("section");
@@ -17,6 +18,9 @@ function  muro() {
   imgpatita.src = patita;
   imgpatita.setAttribute("class", "patita");
   imgpatita.classList.add("imagen1");
+  section.append(imgpatita, formPost,ul);
+  section.append(imgpatita, formPost,ul);
+
 
   // Configurar el formulario
   btnSubmit.textContent = "Publicar post";
@@ -27,10 +31,10 @@ function  muro() {
     const postValue = post.value;
     savePost(postValue);
   });
-
   // Agregar elementos al formulario y al contenedor section
   formPost.append(post, btnSubmit);
-  section.append(imgpatita, formPost,ul);
+
+  // Con getDocs obtenemos los datos de firebastore, luego en esos datos creamos li para mostrarlos, y estos elementos se agregan a la lista ul.
   getPosts().then((docs)=>{
    docs.forEach((doc) => {
     console.log(doc.id)
@@ -40,8 +44,11 @@ function  muro() {
      ul.appendChild(li);
   });
   })
+
+   
+
   // Devolver el contenedor section
   return section;
 }
 
-export default muro;
+ export default muro;

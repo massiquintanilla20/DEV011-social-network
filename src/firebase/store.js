@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot} from "firebase/firestore";
 
 import { app } from "./config.js";
 
