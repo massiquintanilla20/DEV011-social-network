@@ -8,6 +8,7 @@ import login from "./templates/login.js";
 import error from "./templates/error.js";
 import register_template from "./templates/register.js";
 import muro from "./templates/muro.js";
+import create_comment from "./lib/index.js";
 
 // importando firebase
 import "./firebase/config.js";
@@ -19,6 +20,7 @@ const routes = [
   { path: "/error", component: error },
   { path: "/register", component: register_template },
   { path: "/muro", component: muro },
+  {path: "/index", component : create_comment}
 ];
 
 // Establece la ruta predeterminada y obtiene el elemento con el id "root" del documento HTML.
